@@ -1,5 +1,5 @@
 export interface Busca {
-    nome: string;
+    login: string;
     empresa: string;
     web: string;
     local: string;

@@ -1,7 +1,41 @@
 <div class=container>
     <h2>Encontre um perfil GitHub</h2>
-    <input type="text" placeholder="Usuário GitHub"><br>
-    <button>Encontrar</button>
+    <input id="search" placeholder="Usuário GitHub"><br>
+    <button (click)="getBusca()">Encontrar</button>
 </div>
 
-<app-resultado-busca></app-resultado-busca>
+<div *ngIf="busca">
+<div class=containerResultado>
+
+    <div class="right">
+        <img src={{busca.avatar_url}}><br>
+        <a href={{busca.html_url}}>
+            <button> Ver Perfil</button>
+        </a>
+    </div>
+
+    <div class="collumn">
+        <div class="row">
+            <div class="card">Repositórios: {{busca.public_repos}}</div>
+            <div class="card">Seguidores: {{busca.followers}} </div>
+            <div class="card">Seguindo: {{busca.following}}  </div>
+        </div>
+
+        <div class="collumn">
+            <h3 class="cardI">Informações</h3>
+            <p class="cardI">Empresa: {{busca.company}}</p>
+            <p class="cardI">WebSite/Blog: {{busca.blog}}</p>
+            <p class="cardI">Localidade: {{busca.location}}</p>
+            <p class="cardI">Membro desde: {{busca.created_at}} </p>
+
+        </div>
+    </div>
+</div>
+</div>
+
+<div *ngIf="busca==null">
+    <div class=container404>
+        O usuário não foi encontrado
+    </div>
+</div>
+

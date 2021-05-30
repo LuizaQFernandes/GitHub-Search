@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BuscaComponent } from './busca/busca.component'
 import { HomeComponent } from './home/home.component'
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   { path: 'busca', component: BuscaComponent },
@@ -12,8 +13,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-
-  imports: [RouterModule.forRoot(routes)],
+  
+  imports: [RouterModule.forRoot(routes), HttpClientModule,],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
