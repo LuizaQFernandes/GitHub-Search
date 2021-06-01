@@ -117,13 +117,3 @@ button:hover{
 
 }
 
-.container404{
-    display: flex;
-
-    margin: 4rem;
-    background-color: rgba(187, 29, 29, 0.151);
-
-    padding: 1.3rem ;
-
-    height: auto;
-}

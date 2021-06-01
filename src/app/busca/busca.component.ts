@@ -2,9 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { BuscaService } from '../busca.service';
 import { Busca} from '../busca'
 
-import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
-
 @Component({
   selector: 'app-busca',
   templateUrl: './busca.component.html',
@@ -16,9 +13,8 @@ export class BuscaComponent implements OnInit {
   busca?: Busca;
 
   constructor(
-    private route: ActivatedRoute,
     private buscaService: BuscaService,
-    private location: Location
+
   ) { }
 
   ngOnInit(): void {
@@ -30,5 +26,4 @@ export class BuscaComponent implements OnInit {
     this.buscaService.getBusca(login)
       .subscribe(busca => this.busca = busca);
   }
-
 }

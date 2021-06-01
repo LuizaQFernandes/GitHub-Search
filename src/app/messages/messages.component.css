@@ -1,0 +1,11 @@
+.container404{
+    display: flex;
+
+    margin: 4rem;
+    background-color: rgba(187, 29, 29, 0.151);
+    color: rgb(160, 22, 22);
+
+    padding: 1.3rem ;
+
+    height: auto;
+}

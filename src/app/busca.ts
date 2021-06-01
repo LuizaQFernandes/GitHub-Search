@@ -7,4 +7,5 @@ export interface Busca {
     repositorios: number;
     seguidores: number;
     seguindo: number;
+
 }
