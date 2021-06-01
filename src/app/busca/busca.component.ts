@@ -15,7 +15,7 @@ export class BuscaComponent implements OnInit {
 
   constructor(
     private buscaService: BuscaService,
-  
+    private messageService: MessageService
   ) { }
 
   ngOnInit(): void {
@@ -25,6 +25,8 @@ export class BuscaComponent implements OnInit {
   getBusca(): void {
     const login = (<HTMLInputElement>document.getElementById('search')).value;
     this.buscaService.getBusca(login)
-      .subscribe(busca => this.busca = busca);    
+      .subscribe(busca => this.busca = busca);  
+    
+    this.messageService.clear()
   }
 }
