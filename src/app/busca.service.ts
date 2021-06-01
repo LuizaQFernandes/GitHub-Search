@@ -20,9 +20,30 @@ export class BuscaService {
   /** GET busca by login. Will 404 if id not found */
   getBusca(login: string): Observable<Busca> {
     const url = `${this.buscaUrl}/${login}`;
-    return this.http.get<Busca>(url)
+    return this.http.get<Busca>(url).pipe(
+      catchError(this.handleError<Busca>())
+      )
+
   }
 
   private buscaUrl = 'https://api.github.com/users';  // URL to web api
 
+  /** Log a studentService message with the MessageService */
+  private log(message: string) {
+    this.messageService.add(`${message}`);
+  }
+
+  private handleError<T>(result?: T) {
+    return (error: any): Observable<T> => {
+  
+      // TODO: send the error to remote logging infrastructure
+      console.error(error); // log to console instead
+  
+      // TODO: better job of transforming error for user consumption
+      this.log(`Usuário não encontrado`);
+  
+      // Let the app keep running by returning an empty result.
+      return of(result as T);
+    };
+  }
 }

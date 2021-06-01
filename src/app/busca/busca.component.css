@@ -1,5 +1,6 @@
 .container{
     margin: 4rem;
+    margin-bottom: 2rem;
     background-color: rgba(0, 153, 255, 0.151);
 
     padding: 1.3rem 
@@ -32,13 +33,11 @@ input{
     font-size: 1rem;
 }
 
-
-
-
 .containerResultado{
     display: flex;
 
     margin: 4rem;
+    margin-top: 0;
     background-color: rgba(37, 42, 46, 0.151);
 
     padding: 1.3rem ;
